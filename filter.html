@@ -1,0 +1,148 @@
+<!--This page is to filter books -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Enchantia Archive</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    body {
+  background-image: url("https://www.therange.co.uk/_m4/8/5/1541413522_1949.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  background-size: 100% 100%;
+  }
+
+    .container {
+      max-width: 600px;
+      margin: 100 auto;
+      padding: 20px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #ffffff;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color:#969595;
+    }
+
+    .search-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .search-input {
+      flex-grow: 1;
+      padding: 8px;
+      font-size: 16px;
+    }
+
+    .book-list {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .book-item {
+      background-color: #f7f7f7;
+      padding: 12px;
+      margin-bottom: 8px;
+    }
+
+    .book-title {position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+
+    .book-author {
+      color: #5c5b5b;
+    }
+
+    .book-count {
+      font-weight: bold;
+      background-color: #eaeaea;
+      padding: 6px 12px;
+      border-radius: 4px;
+    }
+  </style>
+  <script>
+    function filterBooks() {
+      var input, filter, ul, li, title, author, i, count;
+      input = document.getElementById('filterInput');
+      filter = input.value.toUpperCase();
+      ul = document.getElementById('bookList');
+      li = ul.getElementsByClassName('book-item');
+      count = 0;
+
+      for (i = 0; i < li.length; i++) {
+        title = li[i].querySelector('.book-title');
+        author = li[i].querySelector('.book-author');
+        if (title.innerHTML.toUpperCase().indexOf(filter) > -1 || author.innerHTML.toUpperCase().indexOf(filter) > -1) {
+          li[i].style.display = '';
+          count++;
+        } else {
+          li[i].style.display = 'none';
+        }
+      }
+
+      document.getElementById('bookCount').textContent = count;
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>Book Filter</h1>
+
+    <div class="search-bar">
+      <input type="text" id="filterInput" class="search-input" onkeyup="filterBooks()" placeholder="Search for a book or author...">
+      <span>Count of books<span id="bookCount" class="book-count">0</span></span>
+    </div>
+
+    <ul id="bookList" class="book-list">
+      <li class="book-item">
+        <div class="book-title"></div>
+        <div class="book-author">Harry Potter and The Philosopher Stone</div>
+      </li>
+      <li class="book-item">
+        <div class="book-title"></div>
+        <div class="book-author">Sherlock Homes</div>
+      </li>
+      <li class="book-item">
+        <div class="book-title"></div>
+        <div class="book-author">2001: A Space Odyssey</div>
+      </li>
+      <li class="book-item">
+        <div class="book-title"></div>
+        <div class="book-author">Percy Jackson and The Lightning Thief</div>
+      </li>
+      <li class="book-item">
+        <div class="book-title"></div>
+        <div class="book-author">A Game of Thrones</div>
+      </li>
+      <li class="book-item">
+        <div class="book-title"></div>
+        <div class="book-author">The Lord of the Rings</div>
+      </li>
+      <li class="book-item">
+        <div class="book-title"></div>
+        <div class="book-author">Percy Jackson and The Titan's Curse</div>
+      </li>
+      <li class="book-item">
+        <div class="book-title"></div>
+        <div class="book-author">Black Town</div>
+      </li>
+      
+    </ul>
+  </div>
+</body>
+</html>

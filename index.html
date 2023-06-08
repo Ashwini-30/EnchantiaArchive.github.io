@@ -1,0 +1,162 @@
+<!--This page is the home page of the website-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Enchantia Archive</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700;900&display=swap" rel="stylesheet"/>
+
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+  background-image: url("https://www.therange.co.uk/_m4/8/5/1541413522_1949.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  background-size: 100% 100%;
+  }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        
+        .book-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 800px;
+            margin: 70px auto 50px;
+            padding: 20px;
+        }
+        
+        .book-card {
+            width: 300px;
+            margin: 20px;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+        }
+        
+        .book-image {
+            width: 100px;
+            height: 150px;
+            margin-right: 10px;
+        }
+        
+        .book-details {
+            flex-grow: 1;
+        }
+        
+        .book-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .book-author {
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+  <header>
+    <div class="logo" style="font-family:verdana;">Enchantia Archive</div>
+    <div class="button">
+        <a href="login.html" class="btn btn-1">Login</a>
+        <a href="filter.html" class="btn btn-1">Filter</a>
+    </div>
+  </header>
+    <div class="book-container">
+        <div class="book-card">
+            <img src="https://m.media-amazon.com/images/I/513-uMNY0TL._SY264_BO1,204,203,200_QL40_FMwebp_.jpg" alt="Harry Potter" class="book-image">
+            <div class="book-details">
+                <div class="book-title">Harry Potter and The Philosopher's Stone</div>
+                <div class="book-author">J.K.Rowling</div>
+                <div class="book-author">26 June 1997</div>
+            </div>
+        </div>
+        <div class="book-card">
+            <img src="https://m.media-amazon.com/images/I/51H1Fdkq1vL._SX316_BO1,204,203,200_.jpghttps://m.media-amazon.com/images/I/51H1Fdkq1vL._SX316_BO1,204,203,200_.jpg" alt="Fantastic Beasts and Where to Find Them" class="book-image">
+            <div class="book-details">
+                <div class="book-title">Fantastic Beasts and Where to Find Them</div>
+                <div class="book-author">J.K. Rowling</div>
+                <div class="book-author">10 August 2018</div>
+            </div>
+        </div>
+        <div class="book-card">
+            <img src="https://m.media-amazon.com/images/I/81qOXsLCmhL._AC_UF1000,1000_QL80_.jpg" alt="Percy Jackson" class="book-image">
+            <div class="book-details">
+                <div class="book-title">Percy Jackson The Lightning Thief</div>
+                <div class="book-author">Rick Riordan</div>
+                <div class="book-author">1 July 2005 </div>
+            </div>
+        </div>
+        <div class="book-card">
+          <img src="https://m.media-amazon.com/images/I/617UBjNbf9L.jpg" alt="Ponniyin Selvan" class="book-image">
+          <div class="book-details">
+              <div class="book-title">Ponniyin Selvan</div>
+              <div class="book-author">	Kalki Krishnamurthy</div>
+              <div class="book-author">29 October 1950</div>
+          </div>
+      </div>
+      <div class="book-card">
+        <img src="https://m.media-amazon.com/images/I/91uBtr266tL._AC_UF1000,1000_QL80_.jpg" alt="Parthiban Kanavu" class="book-image">
+        <div class="book-details">
+            <div class="book-title">Parthiban Kanavu</div>
+            <div class="book-author">Kalki Krishnamurthy</div>
+            <div class="book-author">20 June 1942</div>
+        </div>
+    </div>
+    <div class="book-card">
+      <img src="https://m.media-amazon.com/images/I/515-5zLsMkL._SX198_BO1,204,203,200_QL40_FMwebp_.jpg" alt="The Ickabog" class="book-image">
+      <div class="book-details">
+          <div class="book-title">The Ickabog</div>
+          <div class="book-author">	J. K. Rowling</div>
+          <div class="book-author">10 November 2020</div>
+      </div>
+  </div>
+  <div class="book-card">
+    <img src="https://m.media-amazon.com/images/I/61toNHaO00L.jpg" alt="Three Men in a Boat" class="book-image">
+    <div class="book-details">
+        <div class="book-title">Three Men in a Boat</div>
+        <div class="book-author">	Jerome Klapka Jerome</div>
+        <div class="book-author">16 May 1889</div>
+    </div>
+</div>
+<div class="book-card">
+    <img src="https://m.media-amazon.com/images/I/513ivdvlYsL._SX357_BO1,204,203,200_.jpg" alt="Sherlock Holmes" class="book-image">
+  <div class="book-details">
+      <div class="book-title">The Great Adventures Of Sherlock Holmes</div>
+      <div class="book-author">Sir Arthur Conan Doyle</div>
+      <div class="book-author">05 April 1914</div>
+  </div>
+</div>
+<div class="book-card">
+  <img src="https://m.media-amazon.com/images/I/51AdCPSz1QL._SY264_BO1,204,203,200_QL40_FMwebp_.jpg" alt="Fundamentals of Data Science" class="book-image">
+  <div class="book-details">
+      <div class="book-title">Fundamentals of Data Science</div>
+      <div class="book-author">Samuel Burns</div>
+      <div class="book-author">16 September 2019</div>
+  </div>
+</div>
+<div class="book-card">
+  <img src="https://m.media-amazon.com/images/I/81pQPZAFWbL.jpg" alt="Brief History Of Time" class="book-image">
+  <div class="book-details">
+      <div class="book-title">Brief History Of Time</div>
+      <div class="book-author">Stephen Hawking</div>
+      <div class="book-author">1 March 1989</div>
+  </div>
+</div>
+    </div>
+</body>
+</html>

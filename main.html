@@ -1,0 +1,170 @@
+<!--This page is to add books to the library and modify the list -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Enchantia Archive</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    body {
+  background-image: url("https://www.therange.co.uk/_m4/8/5/1541413522_1949.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  background-size: 100% 100%;
+  }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #ffffff;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    form {
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 10px;
+    }
+
+    .form-group label {
+      display: inline-block;
+      width: 80px;
+      font-weight: bold;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="number"] {
+      width: 200px;
+      padding: 4px;
+    }
+
+    .form-group input[type="submit"] {
+      background-color: #bec1c2;
+      color: #212727d8;
+      border: none;
+      padding: 8px 16px;
+      cursor: pointer;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #fafdfb;
+    }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    .edit-btn,
+    .delete-btn {
+      padding: 4px 8px;
+      background-color: #bec1c2;
+      color: #303131;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+  <script>
+    function addBook() {
+      var title = document.getElementById('title').value;
+      var author = document.getElementById('author').value;
+      var rating = document.getElementById('rating').value;
+      var count = document.getElementById('count').value;
+
+      var table = document.getElementById('bookTable');
+      var row = table.insertRow(table.rows.length);
+
+      var titleCell = row.insertCell(0);
+      var authorCell = row.insertCell(1);
+      var ratingCell = row.insertCell(2);
+      var countCell = row.insertCell(3);
+      var actionsCell = row.insertCell(4);
+
+      titleCell.innerHTML = title;
+      authorCell.innerHTML = author;
+      ratingCell.innerHTML = rating;
+      countCell.innerHTML = count;
+      actionsCell.innerHTML = '<button class="edit-btn" onclick="editBook(this)">Edit</button> <button class="delete-btn" onclick="deleteBook(this)">Delete</button>';
+
+      document.getElementById('bookForm').reset();
+    }
+
+    function editBook(button) {
+      var row = button.parentNode.parentNode;
+      var title = row.cells[0].innerHTML;
+      var author = row.cells[1].innerHTML;
+      var rating = row.cells[2].innerHTML;
+      var count = row.cells[3].innerHTML;
+
+      document.getElementById('title').value = title;
+      document.getElementById('author').value = author;
+      document.getElementById('rating').value = rating;
+      document.getElementById('count').value = count;
+
+      row.remove();
+    }
+
+    function deleteBook(button) {
+      var row = button.parentNode.parentNode;
+      row.remove();
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>Book Form</h1>
+
+    <form id="bookForm" onsubmit="event.preventDefault(); addBook();">
+      <div class="form-group">
+        <label for="title">Title:</label>
+        <input type="text" id="title" required>
+      </div>
+      <div class="form-group">
+        <label for="author">Author:</label>
+        <input type="text" id="author" required>
+      </div>
+      <div class="form-group">
+        <label for="rating">Rating:</label>
+        <input type="number" id="rating" min="1" max="5" required>
+      </div>
+      <div class="form-group">
+        <label for="count">Count:</label>
+        <input type="number" id="count" min="1" required>
+      </div>
+      <div class="form-group">
+        <input type="submit" value="Add Book">
+      </div>
+    </form>
+
+    <table id="bookTable">
+      <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Rating</th>
+        <th>Count</th>
+        <th>Actions</th>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>

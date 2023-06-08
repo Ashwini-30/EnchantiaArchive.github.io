@@ -1,0 +1,110 @@
+
+<!--This page is for the user to login -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Enchantia Archive</title>
+  <script>
+    function validateLogin() {
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+
+      if (username === "ashwini" && password === "password") {
+        window.location.href = "main.html";
+      } else {
+        alert("Invalid username or password. Please try again.");
+      }
+    }
+  </script>
+  <style>
+    body {
+  background-image: url('https://www.therange.co.uk/_m4/8/5/1541413522_1949.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  background-size: 100% 100%;
+  }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+      padding: 20px;
+    }
+    .login-button {
+      background-color: #667a81; 
+      color: white; 
+      padding: 10px 20px;
+      cursor: pointer; 
+      font-size: 16px; 
+      border: none;
+    }
+    .login-button:hover {
+      background-color: #bec1c2; 
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    h1 {
+      text-align: center;
+      color: #667a81;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 10px;
+      color:#667a81;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 90%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-bottom: 20px;
+      color: #667a81;
+    }
+
+    button {
+      background-color: #667a81;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    button:hover {
+      background-color: #abc2ac;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Enchantia Archive</h1>
+    <h1>Login</h1>
+    <form action="main.html">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required><br><br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required><br><br>
+
+    <input type="button" class="login-button" value="Login" onclick="validateLogin()">
+    </form>
+  </div>
+</body>
+
+</html>
